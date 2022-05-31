@@ -1,0 +1,92 @@
+body {
+    background-color: beige;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    text-align: center;
+}
+
+.contenedor {
+    background-color: white;
+    width: 90%;
+    height: 80vh;
+    border: black solid 3px;
+    font-size: 2rem;
+    text-align: center;
+    margin: 20px auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr 1fr;
+    gap: 20px;
+    grid-template-areas:
+        "ab ab c"
+        "d ef ef";
+}
+
+.hijo {
+    background-color: aqua;
+    border: 3px solid yellow;
+}
+
+.ab {
+    background-color: blueviolet;
+    grid-area: ab;
+}
+
+.ef {
+    background-color: red;
+    grid-area: ef;
+}
+
+.c {
+    background-color: green;
+    grid-area: c;
+}
+
+.d {
+    background-color: gray;
+    grid-area: d;
+}
+
+.contenedorPadre {
+    width: 90%;
+    margin: 20px auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-areas:
+        "header header header header"
+        "main main empty aside"
+        "footer footer footer footer";
+    gap: 10px;
+}
+
+.contenedorHijo {
+    width: 100%;
+    height: 30vh;
+    border-radius: 3px;
+}
+
+.header {
+    background-color: blue;
+    grid-area: header;
+}
+
+.main {
+    background-color: blueviolet;
+    grid-area: main;
+}
+
+.empty {
+    background-color: gray;
+    grid-area: empty;
+}
+
+.aside {
+    background-color: red;
+    grid-area: aside;
+}
+
+.footer {
+    background-color: green;
+    grid-area: footer;
+}
