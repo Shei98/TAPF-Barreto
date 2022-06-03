@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
-rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <title>Torneo a Puro fútbol</title>
     <link rel="shortcut icon" href="./Fotos/favicon-32x32.png">
     <link rel="stylesheet" href="./estilo.css">
@@ -45,37 +45,93 @@ rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tj
 <!--comentarios-->
 
 <body class="p-3">
-    <main class="contenedor">
-        <div> <img src="./Imágenes/img1.jpg" alt="Imágen 1"></div>
-        <div> <img src="./Imágenes/img2.jpg" alt="Imágen 2"></div>
-        <div> <img src="./Imágenes/img3.jpg" alt="Imágen 3"></div>
-        <div> <img src="./Imágenes/img4.jpg" alt="Imágen 4"></div>
-        <div> <img src="./Imágenes/img5.jpg" alt="Imágen 5"></div>
-        <div> <img src="./Imágenes/img6.jpg" alt="Imágen 6"></div>
-        <div> <img src="./Imágenes/img 7.jpg" alt="Imágen 7"></div>
-        <div> <img src="./Imágenes/img8.jpg" alt="Imágen 8"></div>
-        <div> <img src="./Imágenes/img 9.jpg" alt="Imágen 9"></div>
-        <div> <img src="./Imágenes/img10.jpg" alt="Imágen 10"></div>
+    <class="contenedor">
+        <div id="carouselExampleIndicators" class="carousel slide mx-auto w-75" data-bs-ride="true">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                    aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                    aria-label="Slide 3"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3"
+                    aria-label="Slide 4"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4"
+                    aria-label="Slide 5"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="5"
+                    aria-label="Slide 6"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="6"
+                    aria-label="Slide 7"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="7"
+                    aria-label="Slide 8"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="8"
+                    aria-label="Slide 9"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="9"
+                    aria-label="Slide 10"></button>
+            </div>
+            <div class="carousel-inner w-100 mx-auto">
+                <div class="carousel-item active">
+                    <img src="./Imágenes/img19.jpg" class="d-block w-100" alt="img1">
+                </div>
+                <div class="carousel-item">
+                    <img src="./Imágenes/img20.jpg" class="d-block w-100" alt="img2">
+                </div>
+                <div class="carousel-item">
+                    <img src="./Imágenes/img18.jpg" class="d-block w-100" alt="img3">
+                </div>
+                <div class="carousel-item">
+                    <img src="./Imágenes/img17.jpg" class="d-block w-100" alt="img4">
+                </div>
+                <div class="carousel-item">
+                    <img src="./Imágenes/img16.jpg" class="d-block w-100" alt="img5">
+                </div>
+                <div class="carousel-item">
+                    <img src="./Imágenes/img6.jpg" class="d-block w-100" alt="img6">
+                </div>
+                <div class="carousel-item">
+                    <img src="./Imágenes/img 7.jpg" class="d-block w-100" alt="img7">
+                </div>
+                <div class="carousel-item">
+                    <img src="./Imágenes/img8.jpg" class="d-block w-100" alt="img8">
+                </div>
+                <div class="carousel-item">
+                    <img src="./Imágenes/img 9.jpg" class="d-block w-100" alt="img9">
+                </div>
+                <div class="carousel-item">
+                    <img src="./Imágenes/img10.jpg" class="d-block w-100" alt="img10">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Anterior</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Siguiente</span>
+            </button>
+        </div>
+        </main>
+        <hr>
+        <section class="p-3">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/FLAUI6pSFSs"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+        </section>
 
-    </main>
-    <hr>
-    <section>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/FLAUI6pSFSs" title="YouTube video player"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen></iframe>
-    </section>
 
 
-
-    <footer class="p-3">
-        <h4>Contactos</h4>
-        <ul>
-            <li> (345)5222978 / (345)4956911</li>
-        </ul>
-    </footer>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" 
-integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+        <footer class="p-3">
+            <h4>Contactos</h4>
+            <ul>
+                <li> (345)5222978 / (345)4956911</li>
+            </ul>
+        </footer>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+            crossorigin="anonymous"></script>
 </body>
 <!--comentarios-->
 

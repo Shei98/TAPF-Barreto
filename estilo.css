@@ -36,6 +36,7 @@ div {
     background-color: rgb(241, 239, 122);
     border: 5px black;
     border-style: double;
+    width: auto;
 }
 
 nav {
@@ -75,8 +76,7 @@ nav {
 
 img {
     width: 100%;
-    height: auto;
-    opacity: .6;
+    height: 100€;
     margin: 0;
     justify-content: center;
     align-items: center;
@@ -150,7 +150,6 @@ img:hover {
 .trofeo-img:hover {
     border: none;
 }
-
 
 @media only screen and (min-width: 500px) {
     .body {
