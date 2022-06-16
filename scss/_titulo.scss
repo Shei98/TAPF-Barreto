@@ -1,0 +1,47 @@
+.titulo {
+    width: 100%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    .img {
+    width: 50%;
+    height: 50%;
+    margin: 0;
+    justify-content: center;
+    align-items: center;
+
+    @media all and (min-width: 768px) {
+        &:hover {
+            opacity: none;
+            border: none;
+            transform: none;
+        }
+    }
+    .logo {
+    height: 15rem;
+    width: auto;
+    opacity: 100;
+    border: none;
+    padding-bottom: 0;
+    margin: 0%;
+}
+    .logo:hover {
+    border: none;
+}
+}
+    h1 {
+    font-family: 'Zilla Slab', serif;
+    margin: 30px;
+    font-size: 50px;
+    text-align: center;
+    text-decoration: underline;
+    color: black;
+}
+
+    h2 {
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Zilla Slab', serif;
+}
+}
+

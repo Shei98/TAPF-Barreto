@@ -1,0 +1,35 @@
+header {
+    height: 80px;
+    .header img {
+        width: 50px;
+    }
+    .nav {
+        padding: 1rem;
+    }
+    .menu {
+        list-style-type: none;
+        margin: 0.7rem;
+        background-color: rgb(80, 80, 3);
+        display: flex;
+        justify-content: flex-end;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }    
+    .menu li {
+    display: inline-block;
+    text-align: center;
+    margin: 0.7rem;
+    background-color: rgb(173, 165, 165);
+    padding: 0.7rem;
+    }
+    .menu li a {
+    text-decoration: none;
+    display: inline-block;
+    color: black;
+    }
+    .menu li:hover {
+    background-color: rgb(108, 98, 98);
+    } 
+    .menu li a:hover {
+    color: white;
+    }
+}
