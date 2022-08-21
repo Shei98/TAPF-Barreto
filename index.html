@@ -116,11 +116,47 @@
         </div>
         </class>
     </div>
+    
+    <div>
+        <h2>Registrate gratis!</h2>
+        <form id="suscripcion" action="" class="formulario">
+            <label for="nombre">Tu nombre</label><br>
+            <input type="text" id="nombre" name="nombre" placeholder="Ani Pérez"><br>
+            <label for="email">Tu correo</label><br>
+            <input type="email" name="email" id="email"><br>
+            <input type="submit" id="generico" value="Saludo Generico">
+            <input type="submit" id="personalizado" value="Saludo Personalizado">
+            <button type="button" id="tester">Hace click</button>
+        </form>
+    </div>
+    <div class="caja"></div>
+
+    <div class="form-floating my-3">
+        <input type="email" class="form-control" id="emailAddress" placeholder="nombre@mail.com">
+        <label for="emailAddress">Dirección de correo</label>
+    </div>
+    <div class="form-floating my-3">
+        <input type="password" class="form-control" id="password" placeholder="Contraseña">
+        <label for="password">Contraseña</label>
+    </div>
+    <div class="checkbox mb-3">
+        <label>
+            <input type="checkbox" id="rememberMe" value="remember-me">Recordarme en este navegador
+        </label>
+    </div>
+    <button class="w-100 btn btn-lg btn-primary my-1" id="btnLogin" type="submit">Iniciar sesión</button>
+    <button class="w-100 btn btn-lg btn-warning my-1" id="btnVaciarSessionStorage" type="submit">Borrar mis
+        datos de
+        sesión</button>
+    <button class="w-100 btn btn-lg btn-danger my-1" id="btnVaciarLocalStorage" type="submit">Borrar todos los
+        datos</button>
+</form>
     </footer>
     <!-- JavaScript Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
         crossorigin="anonymous"></script>
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         <script src=".js/script.js"> </script>
 </body>
 <!--comentarios-->

@@ -35,12 +35,14 @@ campeones.forEach((element) => {
 
 let edadPermitida = 18;
 let edadParaCompetir = parseInt(prompt("Ingresa tu edad"));
-if (edadParaCompetir >= edadPermitida) {
-  alert("Podes ingresar");
-} else {
-  alert("No podes ingresar");
-}
-alert("Fin del proceso");
+// Operador ternario:
+edadPermitida > 17 ? alert("Podes ingresar") : alert("No podes ingresar");
+// if (edadParaCompetir >= edadPermitida) {
+//   alert("Podes ingresar");
+// } else {
+//   alert("No podes ingresar");
+// }
+// alert("Fin del proceso");
 
 let nombre = "Fulanito";
 let edad = 20;
@@ -72,6 +74,10 @@ console.log(jugador3);
 jugador4.edad = 22;
 console.log(jugador4.edad);
 
+// Operador logico OR:
+
+console.log(jugador3 || "El jugador no existe");
+
 let nombreJugador = prompt("Ingresa el nombre de tu jugador");
 let apellidoJugador = prompt("Ingresa el apellido de tu jugador");
 let edadJugador = prompt("Ingresa la edad de tu jugador");
@@ -88,13 +94,16 @@ console.log(nodo.nodeType);
 
 let primerNodo = document.documentElement.firstChild;
 
-if (primerNodo.nodeType == 8) {
-  console.log(
-    "El primero nodo es un comentario ysu nodeType es" + primerNodo.nodeType
-  );
-} else {
-  console.log("El primero nodo NO es un comentario");
-}
+// if (primerNodo.nodeType == 8) {
+//   console.log(
+//     "El primero nodo es un comentario y su nodeType es" + primerNodo.nodeType
+//   );
+// } else {
+//   console.log("El primero nodo NO es un comentario");
+// }
+// Operador logico and
+primerNodo.length === 8 && console.log("El primer nodo es un comentario");
+
 let elementosTag = document.getElementsByTagName("p");
 console.log(elementosTag);
 let contenedor = document.querySelector("#containerPrincipal");
@@ -108,12 +117,15 @@ let equipos = [
   "9 de Julio",
   "Velez Sarsfield",
 ];
+
+// spread de arrays:
+console.log(...equipos);
 for (const equipo of equipos) {
   let li = document.createElement("li");
   li.innerText = equipo;
   lista.appendChild(li);
 }
-// agregué eventos 
+// agregué eventos
 const titulo = document.querySelector(title);
 
 function saludarGenerico() {
@@ -125,3 +137,39 @@ const saludarGenerico = () => {
 };
 
 titulo.onclick = saludarGenerico;
+
+// Storage y Json
+localStorage.setItem("nombreUsuario", "Fulanito Pereira");
+let nombreUsuario = document.getElementById("emailAddress");
+let btnLogin = document.getElementById("btnLogin");
+btnLogin.addEventListener("click", () => {
+  localStorage.setItem("emailUsuario", nombreUsuario.value);
+});
+localStorage.setItem("edad", 24);
+console.log(localStorage.getItem("edad"));
+console.log(localStorage.length);
+for (let i = 0; i < localStorage.length; i++) {
+  let clave = localStorage.key[i];
+  let valor = localStorage.getItem(clave);
+  console.log("Clave: " + clave);
+  console.log("Valor: " + valor);
+}
+
+let shei = {
+  user: "Shei",
+  pas: 4567,
+};
+sessionStorage.setItem("usuario", JSON.stringify(shei));
+let usuarioRecuperado = JSON.parse(sessionStorage.getItem("usuario"));
+console.log(usuarioRecuperado);
+
+// sweet alert
+const btnSwal = document.getElementById("botonSwal");
+btnSwal.onclick = () => {
+  Swal.fire({
+    title: "Hola!",
+    text: "Te damos la bienvenida al torneo a Puro Fútbol",
+    icon: "info",
+    iconColor: "#FFFF00",
+  });
+};
