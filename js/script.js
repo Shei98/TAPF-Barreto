@@ -35,14 +35,9 @@ campeones.forEach((element) => {
 
 let edadPermitida = 18;
 let edadParaCompetir = parseInt(prompt("Ingresa tu edad"));
+
 // Operador ternario:
 edadPermitida > 17 ? alert("Podes ingresar") : alert("No podes ingresar");
-// if (edadParaCompetir >= edadPermitida) {
-//   alert("Podes ingresar");
-// } else {
-//   alert("No podes ingresar");
-// }
-// alert("Fin del proceso");
 
 let nombre = "Fulanito";
 let edad = 20;
@@ -94,13 +89,6 @@ console.log(nodo.nodeType);
 
 let primerNodo = document.documentElement.firstChild;
 
-// if (primerNodo.nodeType == 8) {
-//   console.log(
-//     "El primero nodo es un comentario y su nodeType es" + primerNodo.nodeType
-//   );
-// } else {
-//   console.log("El primero nodo NO es un comentario");
-// }
 // Operador logico and
 primerNodo.length === 8 && console.log("El primer nodo es un comentario");
 
@@ -127,10 +115,6 @@ for (const equipo of equipos) {
 }
 // agregué eventos
 const titulo = document.querySelector(title);
-
-function saludarGenerico() {
-  alert("Bienvenido al torneo");
-}
 
 const saludarGenerico = () => {
   alert("Bienvenido al torneo");
@@ -173,3 +157,59 @@ btnSwal.onclick = () => {
     iconColor: "#FFFF00",
   });
 };
+// Resolve & Reject
+const eventoFuturo = (res) => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      res ? resolve("Promesa resuelta") : reject("Promesa rechazada");
+    }, 2000);
+  });
+};
+console.log(eventoFuturo(true));
+console.log(eventoFuturo(false));
+
+// Then & catch
+eventoFuturo(true).then((response) => {
+  console.log(response);
+});
+eventoFuturo(false)
+  .catch((error) => {
+    console.log(error);
+  })
+  .finally(() => {
+    console.log("Fin del proceso");
+  })
+
+  // FETCH
+  .then((json) => console.log(json));
+
+let URL = "https://api-football-standings.azharimm.site/leagues/arg.1";
+
+fetch(URL, {
+  method: "GET",
+  headers: {
+    "Content-type": "application/json; charset=UTF-8",
+  },
+})
+  .then((response) => response.json())
+  .then((data) => console.log(data));
+
+fetch(URL);
+
+function filtrarData(array) {
+  let data = selectData.value;
+  if (!id) {
+    return array;
+  } else {
+    return array.filter((item) => item.data == id);
+  }
+}
+
+async function bringData() {
+  const response = await fetch(URL);
+  const data = await response.json();
+  createHTML(dataFilter(data));
+}
+searchBtn.addEventListener("click", () => {
+  bringData();
+});
