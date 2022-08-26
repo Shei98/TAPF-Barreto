@@ -1,32 +1,32 @@
 const campeones = [
-  (equipo1 = {
+  {
     nombre: "Locos por el fútbol",
     torneo: "sabado",
-  }),
-  (equipo2 = {
+  },
+  {
     nombre: "Club Temperley",
     torneo: "domingo",
-  }),
-  (equipo3 = {
+  },
+  {
     nombre: "Club Libertad",
     torneo: "sabado",
-  }),
-  (equipo4 = {
+  },
+  {
     nombre: "Club 9 de Julio",
     torneo: "domingo",
-  }),
-  (equipo5 = {
+  },
+  {
     nombre: "Regatas",
     torneo: "sabado",
-  }),
-  (equipo6 = {
+  },
+  {
     nombre: "Salto Grande",
     torneo: "domingo",
-  }),
-  (equipo7 = {
+  },
+  {
     nombre: "Salud Pública",
     torneo: "sabado",
-  }),
+  },
 ];
 
 campeones.forEach((element) => {
@@ -35,9 +35,14 @@ campeones.forEach((element) => {
 
 let edadPermitida = 18;
 let edadParaCompetir = parseInt(prompt("Ingresa tu edad"));
+if (edadParaCompetir >= edadPermitida) {
+    alert("Podes ingresar");
+  } else {
+    alert("No podes ingresar");
+  }
+  alert("Fin del proceso");
 
-// Operador ternario:
-edadPermitida > 17 ? alert("Podes ingresar") : alert("No podes ingresar");
+// edadPermitida >= 18 ? alert("Podes ingresar") : alert("No podes ingresar");
 
 let nombre = "Fulanito";
 let edad = 20;
@@ -54,8 +59,6 @@ const jugador2 = {
   edad: 18,
   calle: "Wallabee 42",
 };
-console.log(jugador1);
-alert("El jugador" + jugador1 + "es apto para jugar el torneo");
 
 function Jugador(nombre, apellido, edad) {
   this.nombre = nombre;
@@ -68,16 +71,7 @@ const jugador5 = new Jugador("Julian", "Alvarez", 23);
 console.log(jugador3);
 jugador4.edad = 22;
 console.log(jugador4.edad);
-
-// Operador logico OR:
-
 console.log(jugador3 || "El jugador no existe");
-
-let nombreJugador = prompt("Ingresa el nombre de tu jugador");
-let apellidoJugador = prompt("Ingresa el apellido de tu jugador");
-let edadJugador = prompt("Ingresa la edad de tu jugador");
-const jugadorUsuario = new Jugador(nombreJugador, apellidoJugador, edadJugador);
-console.log(jugadorUsuario);
 
 const resultado = campeones.filter((el) => el.torneo.includes("sabado"));
 const resultado2 = campeones.filter((el) => el.torneo.includes("domingo"));
@@ -89,13 +83,11 @@ console.log(nodo.nodeType);
 
 let primerNodo = document.documentElement.firstChild;
 
-// Operador logico and
 primerNodo.length === 8 && console.log("El primer nodo es un comentario");
 
 let elementosTag = document.getElementsByTagName("p");
 console.log(elementosTag);
 let contenedor = document.querySelector("#containerPrincipal");
-contenedor.innerHTML += "<h1> Probando innerHTML </h1>";
 
 let lista = document.querySelector("#listaEquipos");
 let equipos = [
@@ -106,23 +98,10 @@ let equipos = [
   "Velez Sarsfield",
 ];
 
-// spread de arrays:
-console.log(...equipos);
-for (const equipo of equipos) {
-  let li = document.createElement("li");
-  li.innerText = equipo;
-  lista.appendChild(li);
-}
-// agregué eventos
-const titulo = document.querySelector(title);
-
 const saludarGenerico = () => {
   alert("Bienvenido al torneo");
 };
 
-titulo.onclick = saludarGenerico;
-
-// Storage y Json
 localStorage.setItem("nombreUsuario", "Fulanito Pereira");
 let nombreUsuario = document.getElementById("emailAddress");
 let btnLogin = document.getElementById("btnLogin");
@@ -147,17 +126,17 @@ sessionStorage.setItem("usuario", JSON.stringify(shei));
 let usuarioRecuperado = JSON.parse(sessionStorage.getItem("usuario"));
 console.log(usuarioRecuperado);
 
-// sweet alert
-const btnSwal = document.getElementById("botonSwal");
-btnSwal.onclick = () => {
-  Swal.fire({
-    title: "Hola!",
-    text: "Te damos la bienvenida al torneo a Puro Fútbol",
-    icon: "info",
-    iconColor: "#FFFF00",
-  });
+window.onload = () => {
+  const btnSwal = document.getElementById("botonSwal");
+  btnSwal.onclick = () => {
+    Swal.fire({
+      title: "Hola!",
+      text: "Te damos la bienvenida al Torneo a Puro Fútbol",
+      icon: "info",
+      iconColor: "white",
+    });
+  };
 };
-// Resolve & Reject
 const eventoFuturo = (res) => {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
@@ -168,10 +147,10 @@ const eventoFuturo = (res) => {
 console.log(eventoFuturo(true));
 console.log(eventoFuturo(false));
 
-// Then & catch
 eventoFuturo(true).then((response) => {
   console.log(response);
 });
+
 eventoFuturo(false)
   .catch((error) => {
     console.log(error);
@@ -180,19 +159,13 @@ eventoFuturo(false)
     console.log("Fin del proceso");
   })
 
-  // FETCH
   .then((json) => console.log(json));
 
 let URL = "https://api-football-standings.azharimm.site/leagues/arg.1";
 
-fetch(URL, {
-  method: "GET",
-  headers: {
-    "Content-type": "application/json; charset=UTF-8",
-  },
-})
+fetch(URL)
   .then((response) => response.json())
-  .then((data) => console.log(data));
+  .then((data) => console.log("GET REQUEST", data));
 
 fetch(URL);
 
@@ -210,6 +183,3 @@ async function bringData() {
   const data = await response.json();
   createHTML(dataFilter(data));
 }
-searchBtn.addEventListener("click", () => {
-  bringData();
-});
