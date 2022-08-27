@@ -36,11 +36,11 @@ campeones.forEach((element) => {
 let edadPermitida = 18;
 let edadParaCompetir = parseInt(prompt("Ingresa tu edad"));
 if (edadParaCompetir >= edadPermitida) {
-    alert("Podes ingresar");
-  } else {
-    alert("No podes ingresar");
-  }
-  alert("Fin del proceso");
+  alert("Podes ingresar");
+} else {
+  alert("No podes ingresar");
+}
+alert("Fin del proceso");
 
 // edadPermitida >= 18 ? alert("Podes ingresar") : alert("No podes ingresar");
 
@@ -97,10 +97,6 @@ let equipos = [
   "9 de Julio",
   "Velez Sarsfield",
 ];
-
-const saludarGenerico = () => {
-  alert("Bienvenido al torneo");
-};
 
 localStorage.setItem("nombreUsuario", "Fulanito Pereira");
 let nombreUsuario = document.getElementById("emailAddress");
@@ -183,3 +179,13 @@ async function bringData() {
   const data = await response.json();
   createHTML(dataFilter(data));
 }
+
+let btnBuscar = document.getElementById("buscar")
+
+btnBuscar.addEventListener("click", () => {
+  fetch("https://api-football-standings.azharimm.site/leagues/arg.1")
+    .then((response) => response.json())
+    .then((data) => {
+      (filtrarData(data));
+    });
+});
