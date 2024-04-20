@@ -10,4 +10,6 @@ sección2: <meta name="description=" content="Llená el formulario si querés fo
 sección3:  <meta name="description=" content="Conocé la historia de uno de los torneos mejor organizados de la ciudad de Concordia, E.R" >
 sección4:  <meta name="description=" content="Te mostramos fotos de algunos de los encuentros del torneo A puro Fútbol">
 *Agregué @extend y @mixin
+
+https://shei98.github.io/TAPF-Barreto/index.html 
     
